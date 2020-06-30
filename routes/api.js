@@ -16,9 +16,7 @@ router.get('/stats', function (req, res) {
 // GET
 router.get('/api/workouts', async (req, res) => {
   try {
-    res.json( (await Workout.find()).forEach(workout => {
-      workout.getTotalDuration()
-    }))
+    res.json( await Workout.find({}))
   } catch (err) {
     res.json(err)
   }
